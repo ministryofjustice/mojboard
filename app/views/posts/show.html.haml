@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Posted by:
+  = @post.posted_by
+%p
+  %strong Headline:
+  = @post.headline
+%p
+  %strong Detail:
+  = @post.detail
+= link_to 'Edit', edit_post_path(@post)
+|
+\#{link_to 'Back', posts_path}
