@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module Mojboard
   class Application < Rails::Application
+    # config.use_govuk_elements_form_builder = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -20,6 +21,11 @@ module Mojboard
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+
+    config.app_title = "Mojboard"
+    config.proposition_title = 'Mojboard'
+    config.phase = 'alpha'
+    config.product_type = 'service'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
