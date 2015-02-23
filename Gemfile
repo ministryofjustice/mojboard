@@ -33,6 +33,12 @@ gem 'govuk_frontend_toolkit'
 gem 'govuk_elements_rails'
 gem 'moj_template'
 
+group :test do
+  gem 'rspec-rails', '~> 3.2'
+  gem 'shoulda-matchers', '~> 2.8' 
+  gem 'factory_girl_rails'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
