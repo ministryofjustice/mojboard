@@ -22,4 +22,8 @@ RSpec.describe Post, focus: true do
       end
     end
   end
+
+  describe 'belongs to poster relationship' do
+    it { is_expected.to belong_to :poster}
+  end
 end
