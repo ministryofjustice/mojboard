@@ -16,17 +16,15 @@
 
 - content_for :cookie_message, ""
 
-- if current_user
-  Signed in as #{current_user.email}!
-  \#{link_to "Sign out", signout_path}
-- else
-  = link_to "Sign in with Gmail", "/auth/gplus"
-
 - content_for :content_override do
   %main#page-container{ role: "main" }
     .phase-banner
       %p
-        %span This is a prototype.
+      - if current_user
+        Signed in as #{current_user.email}!
+        \#{link_to "Sign out", signout_path}
+      - else
+        = link_to "Sign in with Gmail", "/auth/gplus"
     =yield
 
 - content_for :footer_app_links do
