@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, focus: true do
   describe 'validations' do
-    it { is_expected.to validate_presence_of :posted_by}
+    it { is_expected.to validate_presence_of :poster_id }
 
     it { is_expected.to validate_presence_of :detail }
 

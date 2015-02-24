@@ -11,7 +11,7 @@
   %tbody
     - @posts.each do |post|
       %tr
-        %td= post.posted_by
+        %td= post.poster.email
         %td= post.headline
         %td= post.detail
         %td= link_to 'Show', post
