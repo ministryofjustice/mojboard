@@ -36,6 +36,11 @@ gem 'govuk_frontend_toolkit'
 gem 'govuk_elements_rails'
 gem 'moj_template'
 
+
+ group :development do
+  gem 'annotate'
+ end
+
 group :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'shoulda-matchers', '~> 2.8' 
