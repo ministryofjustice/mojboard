@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'omniauth-gplus',
+ git: 'https://github.com/ministryofjustice/omniauth-gplus.git'
+
 gem 'haml'
 
 gem 'govuk_frontend_toolkit'
