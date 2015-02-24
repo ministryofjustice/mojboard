@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :check_user_logged_in, only: [:new, :create]
+
   def create
     email = auth_hash['info']['email']
     user = User.where(email: email.to_s).first_or_create
