@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :check_user_logged_in, only: [:show, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -19,6 +20,12 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    # binding.pry
+    if @post.poster_id != current_user.id
+      # binding.pry
+      flash[:error] = "You are not the owner of the post."
+      redirect_to "posts#index" 
+    end
   end
 
   # POST /posts
@@ -26,7 +33,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.poster = current_user
-    
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -70,6 +77,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:posted_by, :headline, :detail)
+      params.require(:post).permit(:headline, :detail)
     end
 end

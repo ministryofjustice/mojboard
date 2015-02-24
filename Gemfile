@@ -36,6 +36,7 @@ gem 'govuk_frontend_toolkit'
 gem 'govuk_elements_rails'
 gem 'moj_template'
 
+gem 'pry-byebug'
 
  group :development do
   gem 'annotate'
