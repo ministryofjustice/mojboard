@@ -1,6 +1,7 @@
 - content_for :page_title do
   = "#{@page_title} - #{Rails.configuration.app_title}"
 
+  / = debug current_user
 - content_for :stylesheets do
   = raw stylesheet_link_tag("application", media: "all")
   = raw %Q|    <!--[if IE 6]> #{stylesheet_link_tag "govuk_elements_extensions_ie6", media: "all"} <![endif]-->|
@@ -19,7 +20,11 @@
   %main#page-container{ role: "main" }
     .phase-banner
       %p
-        %span This is a prototype.
+      - if current_user
+        Signed in as #{current_user.email}!
+        \#{link_to "Sign out", signout_path}
+      - else
+        = link_to "Sign in with Gmail", "/auth/gplus"
     =yield
 
 - content_for :footer_app_links do
