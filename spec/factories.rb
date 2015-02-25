@@ -1,5 +1,12 @@
 # This will guess the User class
-FactoryGirl.define do
+FactoryGirl.define do  
+
+  factory :comment do
+    comment_input ""
+    post_id ""
+    user_id 1
+  end
+
   factory :user do
     email "example@digital.justice.gov.uk"
   end
