@@ -13,4 +13,5 @@
 class Post < ActiveRecord::Base
   validates :poster_id, :detail, :headline, presence: true 
   belongs_to :poster, class_name: 'User'
+  has_many :comments
 end

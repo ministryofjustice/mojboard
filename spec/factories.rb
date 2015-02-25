@@ -1,8 +1,10 @@
 # This will guess the User class
-FactoryGirl.define do  factory :comment do
+FactoryGirl.define do  
+
+  factory :comment do
     comment_input ""
-post_id ""
-user_id 1
+    post_id ""
+    user_id 1
   end
 
   factory :user do

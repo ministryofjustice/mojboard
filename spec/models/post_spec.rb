@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  headline   :string
+#  detail     :text
+#  created_at :datetime
+#  updated_at :datetime
+#  poster_id  :integer
+#
+
 require 'rails_helper'
 
 RSpec.describe Post, focus: true do
@@ -25,5 +37,9 @@ RSpec.describe Post, focus: true do
 
   describe 'belongs to poster relationship' do
     it { is_expected.to belong_to :poster}
+  end
+  
+  describe 'has many to comment relationship' do
+    it { is_expected.to have_many :comments }
   end
 end
