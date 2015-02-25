@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to posts_path, notice: "Signed in!"
     else
       render :failed
+      redirect_to sessions_path
     end
   end
 
