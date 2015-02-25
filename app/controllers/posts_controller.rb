@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  skip_before_action :check_user_logged_in, only: [:show, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -20,11 +19,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    # binding.pry
     if @post.poster_id != current_user.id
-      # binding.pry
       flash[:error] = "You are not the owner of the post."
-      redirect_to "posts#index" 
+      redirect_to action: :index 
     end
   end
 

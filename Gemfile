@@ -42,10 +42,11 @@ gem 'pry-byebug'
   gem 'annotate'
  end
 
-group :test do
+group :test, :development do
   gem 'rspec-rails', '~> 3.2'
   gem 'shoulda-matchers', '~> 2.8' 
   gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :doc do
