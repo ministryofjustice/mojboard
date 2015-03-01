@@ -8,8 +8,9 @@
 
 User.delete_all
 Post.delete_all
+Comment.delete_all
 
-users = User.create([{email: 'user1@example.com'},{email: 'user2@example.com'},{email: 'user3@example.com'}])
+users = User.create([{email: 'evangelos.giataganas@digital.justice.gov.uk'},{email: 'user2@example.com'},{email: 'user3@example.com'}])
 posts = Post.create([
   {poster: users.first, headline: 'Walk at the park', detail: 'We want to go for a walk during lunch!'},
 
@@ -20,3 +21,14 @@ posts = Post.create([
   {poster: users[2], headline: 'Cooking', detail: 'We want to start cooking during lunch'},
 
   {poster: users[0], headline: 'CodeClub', detail: 'Our next CodeClub during lunch is next week'}])
+comments = Comment.create([
+  {comment_input: "Yeah, why not?", post: posts.first, user: users[2]},
+  {comment_input: "Count me in!", post: posts.first, user: users[3]},
+  {comment_input: "That's great!", post: posts.first, user: users[1]},
+  {comment_input: "When are you gonna meet?", post: posts.first, user: users[2]},
+  {comment_input: "Tommorrow.", post: posts.first, user: users[1]},
+  {comment_input: "Yeah, why not?", post: posts[2], user: users[2]},
+  {comment_input: "Count me in!", post: posts[2], user: users[3]},
+  {comment_input: "That's great!", post: posts[2], user: users[1]},
+  {comment_input: "When are you gonna meet?", post: posts[3], user: users[2]},
+  {comment_input: "Tommorrow.", post: posts[3], user: users[1]}])

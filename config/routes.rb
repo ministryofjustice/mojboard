@@ -1,5 +1,9 @@
 Mojboard::Application.routes.draw do
-  resources :posts
+  
+  resources :posts do
+    resources :comments
+  end
+
   root to: "posts#index"
   resource :sessions, only: [:new, :create, :destroy]
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
