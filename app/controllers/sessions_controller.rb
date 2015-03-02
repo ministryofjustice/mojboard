@@ -3,7 +3,9 @@ class SessionsController < ApplicationController
 
   def create
     email = auth_hash['info']['email']
-    user = User.where(email: email.to_s).first_or_create
+    first_name = auth_hash['info']['first_name']
+    last_name = auth_hash['info']['last_name']
+    user = User.where(email: email.to_s,first_name: first_name.to_s, last_name: last_name.to_s).first_or_create
 
     if user
       session[:user_id] = user.id

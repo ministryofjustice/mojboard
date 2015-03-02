@@ -1,19 +1,13 @@
+
 %p#notice= notice
-%p
-  %strong Posted by:
-  = @post.poster.email
-%p
-  %strong Headline:
-  = @post.headline
-%p
-  %strong Detail:
-  = @post.detail
 = link_to 'Edit', edit_post_path(@post)
 |
 \#{link_to 'Back', posts_path}
-
-= render 'comments/form'
-
-%h3 Comments
-= render @post.comments
-/ # = debug @post.comments
+.media
+	.media-left
+		%h4.media-heading #{ @post.poster.first_name }:
+	.media-body
+		%h4.media-heading #{ @post.headline }
+		%p= @post.detail
+	= render 'comments/form'
+	= render @post.comments

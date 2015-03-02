@@ -8,8 +8,6 @@
         - @comment.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :comment_input
-    %br
-    = f.text_field :comment_input
+    = f.text_field :comment_input, placeholder: 'Write a comment'
   .actions
     = f.submit

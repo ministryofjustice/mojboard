@@ -10,7 +10,9 @@ User.delete_all
 Post.delete_all
 Comment.delete_all
 
-users = User.create([{email: 'evangelos.giataganas@digital.justice.gov.uk'},{email: 'user2@example.com'},{email: 'user3@example.com'}])
+users = User.create([{email: 'evangelos.giataganas@digital.justice.gov.uk', first_name: 'Evangelos', last_name: 'Giataganas'},
+                     {email: 'andreas.pit@digital.justice.gov.uk', first_name: 'Andreas', last_name: 'Pit'},
+                     {email: 'mary.non@example.com', first_name: 'Mary', last_name: 'Non'}])
 posts = Post.create([
   {poster: users.first, headline: 'Walk at the park', detail: 'We want to go for a walk during lunch!'},
 
@@ -31,4 +33,4 @@ comments = Comment.create([
   {comment_input: "Count me in!", post: posts[2], user: users[3]},
   {comment_input: "That's great!", post: posts[2], user: users[1]},
   {comment_input: "When are you gonna meet?", post: posts[3], user: users[2]},
-  {comment_input: "Tommorrow.", post: posts[3], user: users[1]}])
+  {comment_input: "Tomorrow.", post: posts[3], user: users[1]}])

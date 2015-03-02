@@ -1,2 +1,5 @@
-%h3= comment.user.email 
-= comment.comment_input
+.media
+	.media-body
+		-if comment.comment_input?
+			#{ comment.user.first_name } says:
+			#{ comment.comment_input }
