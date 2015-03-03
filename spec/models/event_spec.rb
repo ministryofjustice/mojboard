@@ -39,4 +39,8 @@ RSpec.describe Event, type: :model do
   describe 'belongs to user relationship' do
     it { is_expected.to belong_to :organiser}
   end
+
+  describe 'belongs to users relationship' do
+    it { is_expected.to have_and_belong_to_many :attendees}
+  end
 end

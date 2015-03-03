@@ -13,7 +13,8 @@
 class User < ActiveRecord::Base
   has_many :posts, foreign_key: :poster_id
   has_many :comments
-  has_many :events, foreign_key: :organiser_id
+  has_many :organised_events, class_name: 'Event', foreign_key: :organiser_id
+  has_and_belongs_to_many :attended_events, class_name: 'Event', join_table: 'attendees_events', foreign_key: :event_id
 
   def name
     "#{first_name} #{last_name}"
