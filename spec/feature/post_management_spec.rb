@@ -16,7 +16,4 @@ RSpec.feature "Post management", :type => :feature do
 
     expect(page).to have_text("Post was successfully created.")
   end
-
-
-
 end
