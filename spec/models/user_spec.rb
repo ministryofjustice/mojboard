@@ -20,4 +20,8 @@ RSpec.describe User, focus: true do
   describe 'has many to comment relationship' do
     it { is_expected.to have_many :comments }
   end
+
+  describe 'has many to comment relationship' do
+    it { is_expected.to have_many :events }
+  end
 end

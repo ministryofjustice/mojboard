@@ -1,5 +1,7 @@
 Mojboard::Application.routes.draw do
   
+  resources :events
+
   resources :posts do
     resources :comments
   end

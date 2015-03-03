@@ -1,5 +1,15 @@
 # This will guess the User class
-FactoryGirl.define do  
+FactoryGirl.define do  factory :event do
+    name "MyString"
+description "MyString"
+details "MyText"
+organiser_id 1
+start_time "2015-03-03 12:30:06"
+end_time "2015-03-03 12:30:06"
+start_date "2015-03-03"
+end_date "2015-03-03"
+  end
+  
 
   factory :comment do
     comment_input ""

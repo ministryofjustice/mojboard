@@ -13,6 +13,7 @@
 class User < ActiveRecord::Base
   has_many :posts, foreign_key: :poster_id
   has_many :comments
+  has_many :events, foreign_key: :organiser_id
 
   def name
     "#{first_name} #{last_name}"
